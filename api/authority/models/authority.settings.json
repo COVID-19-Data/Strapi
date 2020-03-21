@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "authorities",
+  "info": {
+    "name": "Authority"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "link": {
+      "model": "link"
+    },
+    "sources": {
+      "via": "authority",
+      "collection": "source"
+    }
+  }
+}

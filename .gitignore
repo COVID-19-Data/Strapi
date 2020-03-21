@@ -1,0 +1,8 @@
+.cache
+.tmp
+.vscode
+build
+config/environments/staging/*
+config/environments/production/*
+extensions/users-permissions/config/jwt.json
+node_modules

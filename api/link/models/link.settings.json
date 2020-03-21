@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "links",
+  "info": {
+    "name": "Link"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "href": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "source": {
+      "via": "githubLinks",
+      "model": "source"
+    }
+  }
+}

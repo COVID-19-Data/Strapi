@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "keywords",
+  "info": {
+    "name": "Keyword"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "geographicRegions": {
+      "via": "keywords",
+      "collection": "geographic-region"
+    }
+  }
+}

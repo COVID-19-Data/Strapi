@@ -1,0 +1,6 @@
+.cache
+.tmp
+build
+environments/config/development
+environments/config/staging
+node_modules

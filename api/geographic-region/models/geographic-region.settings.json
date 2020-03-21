@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "geographic_regions",
+  "info": {
+    "name": "Geographic Region"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "parent": {
+      "model": "geographic-region",
+      "via": "children"
+    },
+    "children": {
+      "collection": "geographic-region",
+      "via": "parent"
+    },
+    "keywords": {
+      "collection": "keyword",
+      "via": "geographicRegions",
+      "dominant": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "COUNTRY",
+        "STATE_OR_PROVINCE",
+        "ADMINISTRATIVE_REGION",
+        "CITY",
+        "POSTAL_CODE"
+      ],
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "unique": false
+    },
+    "sources": {
+      "via": "geographicRegions",
+      "collection": "source"
+    },
+    "tables": {
+      "via": "geographicRegions",
+      "collection": "table"
+    }
+  }
+}

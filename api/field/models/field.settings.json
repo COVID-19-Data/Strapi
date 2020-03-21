@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "fields",
+  "info": {
+    "name": "Field"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "table": {
+      "model": "table",
+      "via": "fields"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "TEXT",
+        "INTEGER",
+        "DECIMAL",
+        "DATE",
+        "DATETIME",
+        "BOOLEAN",
+        "ENUM"
+      ]
+    },
+    "possibleValues": {
+      "type": "text"
+    }
+  }
+}

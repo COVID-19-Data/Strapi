@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "sources",
+  "info": {
+    "name": "Source"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "PUBLISHED",
+        "IN_DEVELOPMENT",
+        "PROPOSED"
+      ],
+      "required": true,
+      "default": "PROPOSED"
+    },
+    "links": {
+      "collection": "link",
+      "via": "source"
+    },
+    "format": {
+      "type": "enumeration",
+      "enum": [
+        "DELIMITED_TEXT",
+        "EXCEL",
+        "WEBSITE_TABLE",
+        "WEBSITE_UNSTRUCTURED",
+        "PDF_TABLE",
+        "PDF_UNSTRUCTURED",
+        "API",
+        "RSS",
+        "OTHER"
+      ],
+      "required": true
+    },
+    "formatNotes": {
+      "type": "text"
+    },
+    "geographicRegions": {
+      "collection": "geographic-region",
+      "via": "sources",
+      "dominant": true
+    },
+    "updateFrequency": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "license": {
+      "type": "text",
+      "required": false
+    },
+    "importProcessDescription": {
+      "type": "text"
+    },
+    "githubLinks": {
+      "collection": "link",
+      "via": "source"
+    },
+    "authority": {
+      "model": "authority",
+      "via": "sources"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "tables",
+  "info": {
+    "name": "Table"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "sources": {
+      "collection": "source"
+    },
+    "inputTables": {
+      "collection": "table"
+    },
+    "category": {
+      "model": "category"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "geographicRegions": {
+      "collection": "geographic-region",
+      "via": "tables",
+      "dominant": true
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "fields": {
+      "via": "table",
+      "collection": "field"
+    }
+  }
+}
