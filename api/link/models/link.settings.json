@@ -16,6 +16,10 @@
       "required": true
     },
     "source": {
+      "via": "links",
+      "model": "source"
+    },
+    "repositoryFor": {
       "via": "githubLinks",
       "model": "source"
     }

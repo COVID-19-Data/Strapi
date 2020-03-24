@@ -74,7 +74,7 @@
     },
     "githubLinks": {
       "collection": "link",
-      "via": "source"
+      "via": "repositoryFor"
     },
     "authority": {
       "model": "authority",

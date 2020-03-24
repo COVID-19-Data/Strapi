@@ -1,0 +1,28 @@
+version: '3'
+services:
+  strapi:
+    container_name: strapi
+    image: "${STRAPI_IMAGE_NAME}:${STRAPI_IMAGE_TAG}"
+    environment:
+      DATABASE_PORT: 
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+      DATABASE_SOCKET_PATH: 
+    ports:
+      - 1337:1337
+    volumes:
+      - ./app:/srv/app
+    depends_on:
+      - db
+
+  db:
+    container_name: postgres
+    image: postgres
+    restart: always
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi
